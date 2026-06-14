@@ -22,6 +22,9 @@ public class ParkingZone : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+
+        Debug.Log("Trigger Stay: " + other.name + " | Root: " + other.transform.root.name + " | Tag: " + other.transform.root.tag); 
+
         Transform root = other.transform.root;
 
         if (!root.CompareTag("Player")) return;
