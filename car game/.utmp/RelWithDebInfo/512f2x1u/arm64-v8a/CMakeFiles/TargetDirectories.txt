@@ -1,0 +1,5 @@
+/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/.utmp/RelWithDebInfo/512f2x1u/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/.utmp/RelWithDebInfo/512f2x1u/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/.utmp/RelWithDebInfo/512f2x1u/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/.utmp/RelWithDebInfo/512f2x1u/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/.utmp/RelWithDebInfo/512f2x1u/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

@@ -3,38 +3,59 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
-    public static GameTimer Instance;          // ADD THIS
+    public static GameTimer Instance;
 
-    public TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI timerText;
 
     private bool timerStarted = false;
     private float timeElapsed = 0f;
 
-    void Awake()
+    private void Awake()
     {
-        Instance = this;                       // ADD THIS
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (timerText == null)
+            Debug.LogError("GameTimer: Timer Text is NOT assigned!");
     }
 
-    void Update()
+    private void Update()
     {
         if (!timerStarted && Input.anyKeyDown)
         {
             timerStarted = true;
         }
 
-        if (timerStarted)
+        if (!timerStarted)
+            return;
+
+        timeElapsed += Time.deltaTime;
+
+        if (timerText != null)
         {
-            timeElapsed += Time.deltaTime;
+            int minutes = Mathf.FloorToInt(timeElapsed / 60f);
+            int seconds = Mathf.FloorToInt(timeElapsed % 60f);
 
-            float minutes = Mathf.FloorToInt(timeElapsed / 60);
-            float seconds = Mathf.FloorToInt(timeElapsed % 60);
-
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = $"{minutes:00}:{seconds:00}";
         }
     }
 
-    public float GetElapsedTime()              // ADD THIS
+    public float GetElapsedTime()
     {
         return timeElapsed;
+    }
+
+    public void ResetTimer()
+    {
+        timerStarted = false;
+        timeElapsed = 0f;
+
+        if (timerText != null)
+            timerText.text = "00:00";
     }
 }

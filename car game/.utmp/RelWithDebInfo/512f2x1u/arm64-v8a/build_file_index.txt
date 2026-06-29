@@ -1,0 +1,2 @@
+/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt
+/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt

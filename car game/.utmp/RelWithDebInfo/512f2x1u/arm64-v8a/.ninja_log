@@ -1,0 +1,10 @@
+# ninja log v5
+1	1025	1782736973178136883	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	63ea7cab58048b5c
+2	1126	1782736973286081436	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	d2b74c04c4895401
+1	1263	1782736973421256707	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	441dd57277a0b95b
+1	1308	1782736973463606443	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	37e805ab5eccf2a2
+2	1321	1782736973482399408	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f2d55b207ad3431f
+4	1407	1782736973568266731	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	37e129fe0af77a8d
+0	1584	1782736973743237546	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	ffba042ab841167c
+1	1608	1782736973768583852	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	1a7815c5980e443a
+1608	1638	1782736973803135538	/home/ikram/Desktop/UNITY_GAME/PARK-IT-PERFECT---PARKING-SIMULATOR-UNITY-GAME/car game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/512f2x1u/obj/arm64-v8a/libgame.so	9758d3d036fa4ad1
