@@ -48,6 +48,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.7f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\CrashReset.cs" />
     <Compile Include="Assets\PROMETEO - Car Controller\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\GameOverManager.cs" />
@@ -75,6 +76,31 @@
     <Compile Include="Assets\Scripts\MiniMapFollow.cs" />
     <Compile Include="Assets\Scripts\Navigation\NavigationManager.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+=======
+    <Compile Include="Assets/Scripts/CrashReset.cs" />
+    <Compile Include="Assets/PROMETEO - Car Controller/Scripts/CameraFollow.cs" />
+    <Compile Include="Assets/Scripts/GameOverManager.cs" />
+    <Compile Include="Assets/Scripts/MiniMapFollows.cs" />
+    <Compile Include="Assets/Scripts/PlayerController.cs" />
+    <Compile Include="Assets/Scripts/TimerScript.cs" />
+    <Compile Include="Assets/Scripts/UIManager.cs" />
+    <Compile Include="Assets/Scripts/CameraSwitcher.cs" />
+    <Compile Include="Assets/Scripts/ParkingZone.cs" />
+    <Compile Include="Assets/Scripts/Navigation/Waypoint.cs" />
+    <Compile Include="Assets/Scripts/ChaseCamera.cs" />
+    <Compile Include="Assets/PROMETEO - Car Controller/Scripts/PrometeoTouchInput.cs" />
+    <Compile Include="Assets/Scripts/PauseManager.cs" />
+    <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
+    <Compile Include="Assets/Scripts/NavigationManager.cs" />
+    <Compile Include="Assets/Scripts/LevelLoader.cs" />
+    <Compile Include="Assets/PROMETEO - Car Controller/Scripts/PrometeoCarController.cs" />
+    <Compile Include="Assets/Scripts/LoadingScreenController.cs" />
+    <Compile Include="Assets/Scripts/Speedometer.cs" />
+    <Compile Include="Assets/Scripts/MainMenuController.cs" />
+    <Compile Include="Assets/Scripts/MiniMapFollow.cs" />
+    <Compile Include="Assets/Scripts/Navigation/NavigationManager.cs" />
+    <Compile Include="Assets/Scripts/CameraController.cs" />
+>>>>>>> 0e9f2246d7a13491bb529e8c4ed8472148a893c1
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
