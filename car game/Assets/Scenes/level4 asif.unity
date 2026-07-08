@@ -5383,6 +5383,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7259063095500667181, guid: fb48c1cfb05d73a41b8ad61a6b7db9b8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8794383479717073619, guid: 549b00ebdf92fbf4ba66afcca66235a0, type: 3}
+    - target: {fileID: 7259063095500667181, guid: fb48c1cfb05d73a41b8ad61a6b7db9b8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
