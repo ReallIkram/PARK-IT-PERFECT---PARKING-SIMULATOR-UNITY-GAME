@@ -10023,6 +10023,9 @@ PrefabInstance:
       addedObject: {fileID: 1373387999}
     - targetCorrespondingSourceObject: {fileID: 8132920735021319857, guid: 475b83b54e06562448d33abc56011a3a, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1868208417}
+    - targetCorrespondingSourceObject: {fileID: 8132920735021319857, guid: 475b83b54e06562448d33abc56011a3a, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2032195364}
     - targetCorrespondingSourceObject: {fileID: 8132920735021319857, guid: 475b83b54e06562448d33abc56011a3a, type: 3}
       insertIndex: -1
@@ -13979,6 +13982,37 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1868208416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1868208417}
+  m_Layer: 0
+  m_Name: Pause Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1868208417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868208416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1854862596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1873677996
 Mesh:
   m_ObjectHideFlags: 0
@@ -14956,7 +14990,7 @@ PrefabInstance:
     - target: {fileID: 6921370602404545510, guid: 406395e1965b0eba7816dcc5c20ab360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1373388000}
+      objectReference: {fileID: 0}
     - target: {fileID: 6921370602404545510, guid: 406395e1965b0eba7816dcc5c20ab360, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
@@ -15077,14 +15111,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 664010748975146665, guid: bdb887724d2e468caba0bf2a8daf1bd4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4737453084638778887}
+      addedObject: {fileID: 4737453084638778884}
   m_SourcePrefab: {fileID: 100100000, guid: bdb887724d2e468caba0bf2a8daf1bd4, type: 3}
 --- !u!1 &4737453084638778883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 664010748975146665, guid: bdb887724d2e468caba0bf2a8daf1bd4, type: 3}
   m_PrefabInstance: {fileID: 4737453084638778882}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4737453084638778887
+--- !u!114 &4737453084638778884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

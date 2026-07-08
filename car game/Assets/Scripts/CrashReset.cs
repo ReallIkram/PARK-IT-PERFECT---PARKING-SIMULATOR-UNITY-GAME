@@ -1,14 +1,14 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
 
-public class CrashReset : MonoBehaviour
-{
-    private void OnCollisionEnter(Collision collision)
+    public class CrashReset : MonoBehaviour
     {
-        if (!collision.gameObject.CompareTag("Ground"))
+        private void OnCollisionEnter(Collision collision)
         {
-            
-            GameOverManager.Instance.ShowCrash();
+            if (!collision.gameObject.CompareTag("Ground"))
+            {
+                
+                GameOverManager.Instance.ShowCrash();
+            }
         }
     }
-}
