@@ -22,6 +22,7 @@ public class ParkingZone : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("Inside Trigger: " + other.name);
 
         Debug.Log("Trigger Stay: " + other.name + " | Root: " + other.transform.root.name + " | Tag: " + other.transform.root.tag); 
 
