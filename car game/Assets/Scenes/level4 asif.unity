@@ -1785,7 +1785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 480.85
+      value: 573.2
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1793,11 +1793,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 333.8
+      value: 481.9
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1805,7 +1805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1817,7 +1817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5896157269110011002, guid: 5f17d5e37da3bbc4bb051048ed885816, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5735,7 +5735,7 @@ MonoBehaviour:
   successPanel: {fileID: 1216405674}
   star1: {fileID: 818771045}
   star2: {fileID: 144653614}
-  star3: {fileID: 683535048}
+  star3: {fileID: 0}
   starFilled: {fileID: 21300000, guid: d61c35a7d9262d44ca44fd6b63e2d1c5, type: 3}
   starEmpty: {fileID: 21300000, guid: 299ba41030d7a36409e6380e9317c890, type: 3}
   threeStarTime: 20
@@ -9028,11 +9028,8 @@ SceneRoots:
   - {fileID: 272981155}
   - {fileID: 781934020}
   - {fileID: 63989340}
-<<<<<<< HEAD
   - {fileID: 1846921638}
-=======
   - {fileID: 1226530721}
   - {fileID: 246030248}
   - {fileID: 425130527}
   - {fileID: 958254497}
->>>>>>> 0e9f2246d7a13491bb529e8c4ed8472148a893c1
