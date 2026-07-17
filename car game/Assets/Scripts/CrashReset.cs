@@ -1,14 +1,20 @@
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
+using UnityEngine;
 
-    public class CrashReset : MonoBehaviour
+public class CrashReset : MonoBehaviour
+{
+    private void OnCollisionEnter(Collision collision)
     {
-        private void OnCollisionEnter(Collision collision)
+        Transform t = collision.transform;
+
+        while (t != null)
         {
-            if (!collision.gameObject.CompareTag("Ground"))
+            if (t.CompareTag("Obstacle"))
             {
-                
                 GameOverManager.Instance.ShowCrash();
+                return;
             }
+
+            t = t.parent;
         }
     }
+}

@@ -12,17 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScreen.unity
     guid: 92dfa3c64a67d5f41ba763717b6af943
   - enabled: 1
+    path: Assets/Scenes/LevelSelection.unity
+    guid: 09822f73a2ecd851ab1e852a2825fa95
+  - enabled: 1
+    path: Assets/Scenes/CarSelection.unity
+    guid: c656e2b26e1c71e47a760d7db58716b5
+  - enabled: 1
     path: Assets/Scenes/level1.unity
     guid: eeda484ce47f488459a5bb53d1b91792
-  - enabled: 0
-    path: Assets/Scenes/Original Level 1.unity
-    guid: b6f32f68a5c0d274aba5bc0a9c844a53
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 206173bd633f9034bb4bc7d6a385b9e7
-  - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: c656e2b26e1c71e47a760d7db58716b5
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: ea040725f01cdf04487f1d7e0e78b3a3
