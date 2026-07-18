@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadingScreenController
   loadingSlider: {fileID: 306555721}
   loadingPercentText: {fileID: 2004068489}
-  sceneToLoad: LevelSelection
+  sceneToLoad: CarPreview
 --- !u!4 &2109800337
 Transform:
   m_ObjectHideFlags: 0

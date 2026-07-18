@@ -8,10 +8,14 @@ public class LoadingScreenController : MonoBehaviour
 {
     public Slider loadingSlider;
     public TMP_Text loadingPercentText;
-    public string sceneToLoad = "Level1";
+
+    private string sceneToLoad;
 
     void Start()
     {
+        // Get the level selected in the Level Selection scene
+        sceneToLoad = PlayerPrefs.GetString("SelectedLevel", "Level1");
+
         StartCoroutine(LoadSceneAsync());
     }
 
@@ -26,8 +30,8 @@ public class LoadingScreenController : MonoBehaviour
         {
             float realProgress = Mathf.Clamp01(operation.progress / 0.9f);
 
-            // slowly move fake progress toward real progress
-            fakeProgress = Mathf.MoveTowards(fakeProgress, realProgress, Time.deltaTime * 0.3f);
+            // Smooth loading bar animation
+            fakeProgress = Mathf.MoveTowards(fakeProgress, realProgress, Time.deltaTime * 0.5f);
 
             if (loadingSlider != null)
                 loadingSlider.value = fakeProgress;
@@ -35,12 +39,18 @@ public class LoadingScreenController : MonoBehaviour
             if (loadingPercentText != null)
                 loadingPercentText.text = Mathf.RoundToInt(fakeProgress * 100f) + "%";
 
-            // when fully loaded wait 3 seconds then go to Level1
-            if (operation.progress >= 0.9f && fakeProgress >= 0.99f)
+            // When loading reaches 100%
+            if (operation.progress >= 0.9f && fakeProgress >= 1f)
             {
-                loadingSlider.value = 1f;
-                loadingPercentText.text = "100%";
+                if (loadingSlider != null)
+                    loadingSlider.value = 1f;
+
+                if (loadingPercentText != null)
+                    loadingPercentText.text = "100%";
+
+                // Keep loading screen visible for 3 seconds
                 yield return new WaitForSeconds(3f);
+
                 operation.allowSceneActivation = true;
             }
 

@@ -3,12 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class LevelButton : MonoBehaviour
 {
-    public int levelIndex;
+    // Exact scene name of this level
+    public string levelSceneName;
 
     public void SelectLevel()
     {
-        GameData.SelectedLevel = levelIndex;
+        // Save the selected level
+        PlayerPrefs.SetString("SelectedLevel", levelSceneName);
 
-        SceneManager.LoadScene("CarSelection");
+        // Save to disk
+        PlayerPrefs.Save();
+
+        // Load the loading scene (or load the level directly)
+        SceneManager.LoadScene("LoadingScreen");
+        // OR
+        // SceneManager.LoadScene(levelSceneName);
     }
 }

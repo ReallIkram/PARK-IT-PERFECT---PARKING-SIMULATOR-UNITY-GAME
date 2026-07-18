@@ -13,27 +13,63 @@ public class CarPreviewManager : MonoBehaviour
     {
         currentCarIndex = PlayerPrefs.GetInt("PreviewCar", 0);
 
+        ShowCar();
+    }
+
+    void ShowCar()
+    {
+        if (currentCar != null)
+            Destroy(currentCar);
+
         currentCar = Instantiate(
             previewCars[currentCarIndex],
             spawnPoint.position,
             spawnPoint.rotation
         );
 
-        // Make the preview car rotate
-        currentCar.AddComponent<RotatePreview>();
+        // Rotate preview
+        if (currentCar.GetComponent<RotatePreview>() == null)
+            currentCar.AddComponent<RotatePreview>();
+
+        // Save current preview index
+        PlayerPrefs.SetInt("PreviewCar", currentCarIndex);
     }
 
+    // Next Button
+    public void NextCar()
+    {
+        currentCarIndex++;
+
+        if (currentCarIndex >= previewCars.Length)
+            currentCarIndex = 0;
+
+        ShowCar();
+    }
+
+    // Previous Button
+    public void PreviousCar()
+    {
+        currentCarIndex--;
+
+        if (currentCarIndex < 0)
+            currentCarIndex = previewCars.Length - 1;
+
+        ShowCar();
+    }
+
+    // Play Button
     public void SelectCar()
     {
-        // Save the selected car for gameplay
+        // Save selected car for gameplay
         PlayerPrefs.SetInt("SelectedCar", currentCarIndex);
+        PlayerPrefs.Save();
 
-        // Go to Level Select
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("LevelSelection");
     }
 
+    // Back Button
     public void Back()
     {
-        SceneManager.LoadScene("CarSelect");
+        SceneManager.LoadScene("Main Menu");
     }
 }

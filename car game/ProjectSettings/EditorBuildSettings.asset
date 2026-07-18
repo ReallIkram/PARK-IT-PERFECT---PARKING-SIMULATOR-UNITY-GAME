@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 09822f73a2ecd851ab1e852a2825fa95
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CarSelection.unity
     guid: c656e2b26e1c71e47a760d7db58716b5
   - enabled: 1
@@ -32,5 +32,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarSelect.unity
     guid: ddd6e0e29fa630d4d829c307b6ac6c76
+  - enabled: 1
+    path: Assets/Scenes/level5.unity
+    guid: 91e667844a4fcd54894c321d53bce0f5
+  - enabled: 1
+    path: Assets/Scenes/level4.unity
+    guid: 687178ca30e131c40b5018a10e8b69a1
+  - enabled: 1
+    path: Assets/Scenes/Level7.unity
+    guid: 79d105e61f7b11b4d92592212b275549
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: 70190a5de30ad2443a21d79bfd5de642
+  - enabled: 1
+    path: Assets/Scenes/level5 1.unity
+    guid: e2107914470c23c40aea45e7905570d6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

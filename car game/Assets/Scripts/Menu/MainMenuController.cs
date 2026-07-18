@@ -7,7 +7,7 @@ public class MainMenuController : MonoBehaviour {
     public AudioSource uiAudioSource;
     public AudioClip buttonClickSound;
 
-    public void PlayGame()    { PlayButtonSound(); SceneManager.LoadScene("LoadingScreen"); }
+    public void PlayGame()    { PlayButtonSound(); SceneManager.LoadScene("CarPreview"); }
     public void OpenOptions()  { PlayButtonSound(); optionsPanel.SetActive(true); }
     public void CloseOptions() { PlayButtonSound(); optionsPanel.SetActive(false); }
     public void QuitGame() {

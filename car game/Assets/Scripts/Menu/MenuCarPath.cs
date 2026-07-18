@@ -7,11 +7,24 @@ public class MenuCarPath : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed = 8f;
-    public float rotationSpeed = 5f;
+    public float turnSpeed = 5f;
     public float waypointRadius = 2f;
     public bool loop = true;
 
+    [Header("Wheel Meshes")]
+    public Transform frontLeftWheel;
+    public Transform frontRightWheel;
+    public Transform rearLeftWheel;
+    public Transform rearRightWheel;
+
+    [Header("Wheel Settings")]
+    public float wheelRadius = 0.35f;
+    public float maxSteerAngle = 30f;
+
     private int currentWaypoint = 0;
+
+    private float wheelSpin = 0f;
+    private float steerAngle = 0f;
 
     void Update()
     {
@@ -20,30 +33,45 @@ public class MenuCarPath : MonoBehaviour
 
         Transform target = waypoints[currentWaypoint];
 
-        // Direction to target
-        Vector3 direction = target.position - transform.position;
-        direction.y = 0f;
+        Vector3 dir = target.position - transform.position;
+        dir.y = 0f;
 
-        // Rotate smoothly
-        if (direction != Vector3.zero)
+        if (dir.magnitude > 0.01f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Quaternion targetRot = Quaternion.LookRotation(dir);
+
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
-                targetRotation,
-                rotationSpeed * Time.deltaTime
-            );
+                targetRot,
+                turnSpeed * Time.deltaTime);
+
+            float angle =
+                Vector3.SignedAngle(
+                    transform.forward,
+                    dir.normalized,
+                    Vector3.up);
+
+            steerAngle = Mathf.Lerp(
+                steerAngle,
+                Mathf.Clamp(angle, -maxSteerAngle, maxSteerAngle),
+                Time.deltaTime * 5f);
         }
 
-        // Move towards target
+        Vector3 oldPos = transform.position;
+
         transform.position = Vector3.MoveTowards(
             transform.position,
             target.position,
-            moveSpeed * Time.deltaTime
-        );
+            moveSpeed * Time.deltaTime);
 
-        // Next waypoint
-        if (Vector3.Distance(transform.position, target.position) <= waypointRadius)
+        float distance = Vector3.Distance(oldPos, transform.position);
+
+        wheelSpin +=
+            (distance / (2f * Mathf.PI * wheelRadius)) * 360f;
+
+        ApplyWheelRotation();
+
+        if (Vector3.Distance(transform.position, target.position) < waypointRadius)
         {
             currentWaypoint++;
 
@@ -57,18 +85,36 @@ public class MenuCarPath : MonoBehaviour
         }
     }
 
+    void ApplyWheelRotation()
+    {
+        if (frontLeftWheel)
+            frontLeftWheel.localRotation =
+                Quaternion.Euler(wheelSpin, steerAngle, 0);
+
+        if (frontRightWheel)
+            frontRightWheel.localRotation =
+                Quaternion.Euler(wheelSpin, steerAngle, 0);
+
+        if (rearLeftWheel)
+            rearLeftWheel.localRotation =
+                Quaternion.Euler(wheelSpin, 0, 0);
+
+        if (rearRightWheel)
+            rearRightWheel.localRotation =
+                Quaternion.Euler(wheelSpin, 0, 0);
+    }
+
     private void OnDrawGizmos()
     {
-        if (waypoints == null || waypoints.Length == 0)
-            return;
+        if (waypoints == null) return;
 
         Gizmos.color = Color.green;
 
         for (int i = 0; i < waypoints.Length; i++)
         {
-            if (waypoints[i] == null) continue;
+            if (!waypoints[i]) continue;
 
-            Gizmos.DrawSphere(waypoints[i].position, 0.4f);
+            Gizmos.DrawSphere(waypoints[i].position, 0.3f);
 
             if (i < waypoints.Length - 1)
                 Gizmos.DrawLine(waypoints[i].position, waypoints[i + 1].position);
