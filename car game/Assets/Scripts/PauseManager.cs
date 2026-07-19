@@ -23,16 +23,12 @@ public class PauseManager : MonoBehaviour
 
         Instance = this;
 
-        Time.timeScale = 1f;
-
-        if (pausePanel != null)
-            pausePanel.SetActive(false);
-        else
-            Debug.LogError("Pause Panel is NOT assigned!");
+        ResumeGame();
     }
 
     private void Update()
     {
+        // Don't allow pause if Game Over or Success panel is open
         if (GameOverManager.Instance != null)
         {
             if ((GameOverManager.Instance.gameOverPanel != null &&
@@ -50,6 +46,7 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    // Toggle with ESC
     public void TogglePause()
     {
         if (IsPaused)
@@ -58,29 +55,27 @@ public class PauseManager : MonoBehaviour
             PauseGame();
     }
 
+    // Called from ESC or Pause Button
     public void PauseGame()
     {
-        Debug.Log("PauseGame()");
-
         if (pausePanel == null)
+        {
+            Debug.LogError("Pause Panel is not assigned!");
             return;
+        }
 
         pausePanel.SetActive(true);
-
         Time.timeScale = 0f;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
+    // Called from Continue Button
     public void ResumeGame()
     {
-        Debug.Log("ResumeGame()");
-
-        if (pausePanel == null)
-            return;
-
-        pausePanel.SetActive(false);
+        if (pausePanel != null)
+            pausePanel.SetActive(false);
 
         Time.timeScale = 1f;
 
@@ -91,7 +86,14 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    // Button Function
+    public void ContinueButton()
+    {
+        ResumeGame();
+    }
+
+    // Button Function
+    public void RestartButton()
     {
         ResumeGame();
 
@@ -99,7 +101,8 @@ public class PauseManager : MonoBehaviour
             GameOverManager.Instance.Restart();
     }
 
-    public void LoadMainMenu()
+    // Button Function
+    public void MainMenuButton()
     {
         ResumeGame();
 
@@ -107,7 +110,8 @@ public class PauseManager : MonoBehaviour
             GameOverManager.Instance.GoToMainMenu();
     }
 
-    public void QuitGame()
+    // Button Function
+    public void QuitButton()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
