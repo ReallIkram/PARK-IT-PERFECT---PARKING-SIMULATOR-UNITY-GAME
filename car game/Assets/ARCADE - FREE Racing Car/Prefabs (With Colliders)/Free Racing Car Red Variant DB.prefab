@@ -205,6 +205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Free Racing Car Red Variant DB
       objectReference: {fileID: 0}
+    - target: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6547022938882126479, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: useUI
       value: 1

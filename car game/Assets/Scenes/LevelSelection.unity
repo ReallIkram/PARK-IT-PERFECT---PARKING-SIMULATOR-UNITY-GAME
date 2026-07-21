@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05855f09d28995ed3b9ca08cf48842eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelButton
-  levelSceneName: level5
+  levelSceneName: level4
 --- !u!1 &136108602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05855f09d28995ed3b9ca08cf48842eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelButton
-  levelSceneName: Level6
+  levelSceneName: level5
 --- !u!114 &597092272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,7 +3101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05855f09d28995ed3b9ca08cf48842eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelButton
-  levelSceneName: Level7
+  levelSceneName: Level6
 --- !u!114 &1158530460
 MonoBehaviour:
   m_ObjectHideFlags: 0

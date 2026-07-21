@@ -14,6 +14,10 @@ public class CarSpawner : MonoBehaviour
     {
         int selectedCar = PlayerPrefs.GetInt("SelectedCar", 0);
 
+        // Prevent invalid index
+        if (selectedCar < 0 || selectedCar >= cars.Length)
+            selectedCar = 0;
+
         // Spawn selected car
         spawnedCar = Instantiate(
             cars[selectedCar],
@@ -23,37 +27,47 @@ public class CarSpawner : MonoBehaviour
 
         // Rotate if required
         spawnedCar.transform.Rotate(0f, 270f, 0f);
+        // Assign minimap target
+MinimapFollow minimap = FindFirstObjectByType<MinimapFollow>();
 
-        // Get Rigidbody
+if (minimap != null)
+{
+    minimap.SetTarget(spawnedCar.transform);
+}
+        // Cache Rigidbody
         rb = spawnedCar.GetComponent<Rigidbody>();
 
         // Assign all Cinemachine cameras
         CinemachineCamera[] cameras =
             FindObjectsByType<CinemachineCamera>(FindObjectsSortMode.None);
 
-        foreach (var cam in cameras)
+        foreach (CinemachineCamera cam in cameras)
         {
             cam.Follow = spawnedCar.transform;
             cam.LookAt = spawnedCar.transform;
         }
 
-        // -----------------------------
-        // ENGINE SOUND SETUP
-        // -----------------------------
+        // Engine sound setup
         AudioSource engine = spawnedCar.GetComponentInChildren<AudioSource>(true);
 
-        if (engine != null)
+        if (engine == null)
+        {
+            Debug.LogWarning("No AudioSource found inside the spawned car.");
+        }
+        else
         {
             engine.playOnAwake = false;
             engine.loop = true;
             engine.Stop();
 
-            CarEngineSound sound = spawnedCar.AddComponent<CarEngineSound>();
-            sound.engineSound = engine;
-        }
-        else
-        {
-            Debug.LogWarning("No AudioSource found inside the spawned car.");
+            // Add CarEngineSound only if missing
+            CarEngineSound sound = spawnedCar.GetComponent<CarEngineSound>();
+
+            if (sound == null)
+                sound = spawnedCar.AddComponent<CarEngineSound>();
+
+            // DO NOT assign engineSound here.
+            // CarEngineSound will automatically find the AudioSource.
         }
     }
 

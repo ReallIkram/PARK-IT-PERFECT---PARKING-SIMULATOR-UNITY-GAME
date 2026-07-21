@@ -79,6 +79,7 @@
     <Compile Include="Assets/PROMETEO - Car Controller/Scripts/PrometeoTouchInput.cs" />
     <Compile Include="Assets/Scripts/PauseManager.cs" />
     <Compile Include="Assets/Scripts/LEVEL DATA/GameData.cs" />
+    <Compile Include="Assets/Scripts/CarEngineSound.cs" />
     <Compile Include="Assets/Scripts/TrafficAI.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/NavigationManager.cs" />
@@ -87,7 +88,6 @@
     <Compile Include="Assets/Scripts/LevelLoader.cs" />
     <Compile Include="Assets/Scripts/RotatePreview.cs" />
     <Compile Include="Assets/HYPER SPORT/SR/Controllers/CameraController.cs" />
-    <Compile Include="Assets/Scripts/CarEnginerSound.cs" />
     <Compile Include="Assets/Scripts/CarSpawner1.cs" />
     <Compile Include="Assets/PROMETEO - Car Controller/Scripts/PrometeoCarController.cs" />
     <Compile Include="Assets/Scripts/UI/CarSelectionManager.cs" />
