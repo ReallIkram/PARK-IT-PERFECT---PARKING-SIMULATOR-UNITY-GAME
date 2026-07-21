@@ -40,46 +40,21 @@ public class CarSpawner : MonoBehaviour
         // -----------------------------
         // ENGINE SOUND SETUP
         // -----------------------------
-        PrometeoCarController controller =
-            spawnedCar.GetComponent<PrometeoCarController>();
+        AudioSource engine = spawnedCar.GetComponentInChildren<AudioSource>(true);
 
-        if (controller != null)
+        if (engine != null)
         {
-            AudioSource engine =
-                spawnedCar.GetComponentInChildren<AudioSource>(true);
+            engine.playOnAwake = false;
+            engine.loop = true;
+            engine.Stop();
 
-            if (engine != null)
-            {
-                controller.useSounds = true;
-                controller.carEngineSound = engine;
-
-                // Make sure the engine loops
-                engine.loop = true;
-
-                // Start with idle pitch
-                engine.pitch = 0.8f;
-
-                // Play engine
-                if (!engine.isPlaying)
-                    engine.Play();
-            }
-            else
-            {
-                Debug.LogWarning("No Engine AudioSource found inside the spawned car.");
-            }
+            CarEngineSound sound = spawnedCar.AddComponent<CarEngineSound>();
+            sound.engineSound = engine;
         }
-
-        // -----------------------------
-        // OPTIONAL: Tire Screech Sound
-        // -----------------------------
-        /*
-        AudioSource[] sounds = spawnedCar.GetComponentsInChildren<AudioSource>(true);
-
-        if (sounds.Length > 1)
+        else
         {
-            controller.tireScreechSound = sounds[1];
+            Debug.LogWarning("No AudioSource found inside the spawned car.");
         }
-        */
     }
 
     void Update()

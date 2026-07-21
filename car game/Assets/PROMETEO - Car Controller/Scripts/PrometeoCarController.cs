@@ -266,6 +266,8 @@ public class PrometeoCarController : MonoBehaviour
     void Update()
     {
 
+      
+
       //CAR DATA
 
       // We determine the speed of the car.
